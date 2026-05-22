@@ -127,3 +127,26 @@ If you're new to A2A and multi-agent systems, work through the versions in order
 1. **v1** — Understand the raw A2A protocol (discovery + JSON-RPC task API)
 2. **v2** — See how a real LLM agent plugs into the protocol via Google ADK
 3. **v3** — Explore orchestration: dynamic discovery, tool-based routing, and agent composition
+
+
+## Steps to run
+
+**v1**
+```bash
+1. **Run Server**  uvicorn simple_version.server.tells_time_serve:app
+2. **Run Client**  python -m simple_version.client.time_client
+```
+
+**v2**
+```bash
+1. **Run Server**  python -m version_2_adk_agent.agents.google_adk
+2. **Run Client**  python -m version_2_adk_agent.app.cmd.cmd --agent http://localhost:10002 
+```
+
+**v3**
+```bash
+1. **Run Server1** python -m version_3_multi_agent.agents.explain_agent --host localhost --port 10000
+2. **Run Server2** python -m version_3_multi_agent.agents.trip_planner --host localhost --port 10001
+3. **Run Server3** python -m version_3_multi_agent.agents.host_agent.entry --host localhost --port 10002
+4. **Run Client** python -m version_3_multi_agent.app.cmd.cmd --agent http://localhost:10002
+```
