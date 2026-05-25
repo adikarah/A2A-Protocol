@@ -20,7 +20,7 @@ This enables composing complex workflows from modular, independently-running age
 ## Repository Structure
 
 ```
-a2a_samples/
+A2A-Protocol/
 ├── simple_version/          # v1: Baseline Flask and FastAPI agent (no LLM)
 ├── version_2_adk_agent/     # v2: Single LLM agent using Google ADK
 └── version_3_multi_agent/   # v3: Multi-agent orchestration with dynamic discovery
